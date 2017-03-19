@@ -22,7 +22,7 @@ if (isset($_GET['name']) and isset($_GET['password'])) {
 <form action="ctf.php">
 Username: <input type="text" name="name">
 Password: <input type="text" name="password">
-<input type="submit" name="submit">
+<input type="submit">
 </form>
 </body>
 </html>
