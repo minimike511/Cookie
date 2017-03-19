@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+
+  "name": "Random Hijack Script",
+  "description": "Install at your own risk :P",
+  "version": "1.0",
+  "author": "NobodyRandom",
+
+  "content_scripts": [
+	{
+	  "matches": [
+		"*://owl.uwo.ca/*"
+	  ],
+	  "include_globs": [
+		"https://owl.uwo.ca/*"
+	  ],
+	  "js": [
+"jquery-3.2.0.min.js",
+"parse.min.js",
+		"injector.js"
+	  ],
+	  "run_at": "document_end",
+	  "all_frames": true
+	}
+  ],
+
+  "web_accessible_resources": [
+	"script.js",
+	"parse.min.js"
+  ],
+
+  "permissions": [
+	"activeTab",
+	"tabs",
+	"unlimitedStorage",
+	"storage"
+  ]
+}
