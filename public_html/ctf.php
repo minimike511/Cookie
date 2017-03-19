@@ -1,5 +1,5 @@
 <?php
-$flag = $_ENV['CTF_FLAG'];
+require 'flag.php';
 
 if (isset($_GET['name']) and isset($_GET['password'])) {
     $name = (string)$_GET['name'];
