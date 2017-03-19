@@ -24,11 +24,6 @@ if ($_POST['user'] != '' && $_POST['user'] != null) {
 
 <html>
 <body>
-<h1>
-    <a href="index.txt">
-        Source code
-    </a>
-</h1>
 <?php
 if (!$userAuthed) {
     ?>

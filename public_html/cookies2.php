@@ -9,7 +9,7 @@ session_start();
 echo $_SESSION['nobAuth'] . "\n";
 echo $_COOKIE['nobAuth'] . "\n";
 if ($_COOKIE['nobAuth'] != "true") {
-    echo "You are not authorized. Go away :(";
+    echo "You are not authorized. Go away :(\n";
 } else {
-    echo "You are good :)";
+    echo "You are good :)\n";
 }
