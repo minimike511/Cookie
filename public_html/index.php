@@ -16,6 +16,7 @@ if ($_POST['user'] != '' && $_POST['user'] != null) {
         $userAuthed = true;
         $_SESSION['nobAuth'] = true;
         setcookie("nobAuth","true",time()+600000);
+
     }
 }
 ?>
