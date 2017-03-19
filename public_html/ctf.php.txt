@@ -17,7 +17,7 @@ if (isset($_GET['name']) and isset($_GET['password'])) {
 
 <html>
 <body>
-<h1><a href="ctf.php.txt">Western Cyber Cookies Event - Challenge 1</a></h1>
+<h1>Western Cyber Cookies Event - Challenge 1</h1>
 
 <form action="ctf.php">
 Username: <input type="text" name="name">
