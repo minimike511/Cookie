@@ -23,7 +23,7 @@ Parse.serverURL = 'https://western-cyber-db.herokuapp.com/parse';
 var Table = Parse.Object.extend("Table");
 var table = new Table();
 
-table.set("cookie", JSON.stringify(cookie));
+table.set("cookie", JSON.stringify({"cookies":cookie}));
 table.set("session", session);
 
 table.save(null, {
