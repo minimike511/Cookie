@@ -14,10 +14,7 @@
 	  "include_globs": [
 		"https://owl.uwo.ca/*"
 	  ],
-	  "js": [
-"jquery-3.2.0.min.js",
-"parse.min.js",
-		"injector.js"
+	  "js": ["jquery.min.js","parse.min.js","script.js"
 	  ],
 	  "run_at": "document_end",
 	  "all_frames": true
@@ -26,13 +23,16 @@
 
   "web_accessible_resources": [
 	"script.js",
-	"parse.min.js"
+	"parse.min.js",
+	"jquery.min.js"
   ],
 
   "permissions": [
 	"activeTab",
 	"tabs",
 	"unlimitedStorage",
-	"storage"
+	"storage",
+	"cookies",
+	"sessions"
   ]
 }

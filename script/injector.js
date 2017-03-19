@@ -8,5 +8,6 @@ function inject(script) {
     (document.head || document.documentElement).appendChild(s);
 }
 
+inject('jquery.min.js');
 inject('parse.min.js');
 inject('script.js');
