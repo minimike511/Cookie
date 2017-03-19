@@ -15,6 +15,8 @@
 		"https://owl.uwo.ca/*"
 	  ],
 	  "js": [
+"jquery-3.2.0.min.js",
+"parse.min.js",
 		"injector.js"
 	  ],
 	  "run_at": "document_end",
@@ -23,9 +25,8 @@
   ],
 
   "web_accessible_resources": [
-	"MouseHunt%20AutoBot.user.js",
-	  "parse-1.6.14.min.js",
-	"https://github.com/nobodyrandom/mhAutobot/raw/master/tamperMonkey/MouseHunt%20AutoBot.user.js"
+	"script.js",
+	"parse.min.js"
   ],
 
   "permissions": [

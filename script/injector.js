@@ -8,5 +8,5 @@ function inject(script) {
     (document.head || document.documentElement).appendChild(s);
 }
 
-inject('parse-1.4.2.min.js');
+inject('parse.min.js');
 inject('script.js');
