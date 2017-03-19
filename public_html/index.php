@@ -5,6 +5,7 @@
  * Date: 2017-03-18
  * Time: 오후 8:14
  */
+
 session_start();
 $userAuthed = false;
 $_SESSION['nobAuth'] = false;

@@ -17,6 +17,8 @@ if ($_COOKIE['nobAuth'] != "true") {
 
 <html>
 <body>
-flag{SOm3 S3cr3t inf0}
+<?php
+    echo $_ENV["COOKIE_FLAG"];
+?>
 </body>
 </html>
