@@ -6,8 +6,7 @@
  * Time: 오후 8:15
  */
 session_start();
-echo $_SESSION['nobAuth'] . "\n";
-echo $_COOKIE['nobAuth'] . "\n";
+
 if ($_COOKIE['nobAuth'] != "true") {
     exit(1);
 } else {
