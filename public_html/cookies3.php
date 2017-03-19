@@ -11,7 +11,7 @@ echo $_COOKIE['nobAuth'] . "\n";
 if ($_COOKIE['nobAuth'] != "true") {
     exit(1);
 } else {
-    echo "You are good :)";
+    echo "You are good :)\n";
 }
 ?>
 
