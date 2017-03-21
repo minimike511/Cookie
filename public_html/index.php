@@ -33,8 +33,8 @@ if ($_POST['user'] != '' && $_POST['user'] != null) {
 if (!$userAuthed) {
     ?>
     <form method="POST" action="index.php">
-        <input type="text" name="user" id="user">
-        <input type="password" name="password" id="password">
+        Username: <input type="text" name="user" id="user"><br>
+        Password: <input type="password" name="password" id="password">
         <input type="submit" value="SUBMIT">
     </form>
     <?php
