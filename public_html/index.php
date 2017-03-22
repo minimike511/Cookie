@@ -10,8 +10,8 @@ session_start();
 $userAuthed = false;
 $_SESSION['nobAuth'] = false;
 
-setcookie("ID", $_POST['user'], time() + (86400 * 30), "/"); // 86400 = 1 day
-setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 day
+setcookie("ID", "THIS IS", time() + (86400 * 30), "/"); // 86400 = 1 day
+setcookie("PWD", "COOKIE", time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 
 <html>
