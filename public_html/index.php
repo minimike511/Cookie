@@ -10,13 +10,9 @@ session_start();
 $userAuthed = false;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    setcookie("ID", $_POST['user'], time() + (86400 * 30), "/"); // 86400 = 1 day
-    setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("HASH", str_rot13($_POST['user'] . " " . $_POST['password']), time() + (86400 * 30), "/");
 }
 
-echo $_COOKIE['HASH'] . '\n';
-echo $_ENV['COOKIE_HASH'] . '\n';
 if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
     $userAuthed = true;
 }
