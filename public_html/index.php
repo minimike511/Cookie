@@ -19,13 +19,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
     $userAuthed = true;
 }
-/*
-if ($_POST['user'] != '' && $_POST['user'] != null) {
-    if ($_POST['user'] == $_ENV["COOKIE_ID"] && $_POST['password'] == $_ENV["COOKIE_PWD"]) {
-        $userAuthed = true;
-        setcookie("nobAuth","true",time()+600000);
-    }
-}*/
 ?>
 
 <html>
