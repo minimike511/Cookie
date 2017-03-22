@@ -10,11 +10,8 @@ session_start();
 $userAuthed = false;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    setcookie("ID", $_POST['user'], time() + (86400 * 30), "/"); // 86400 = 1 day
-    setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie("HASH", str_rot13($_POST['user'] . " " . $_POST['password']), time() + (86400 * 30), "/");
 }
-
 
 if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
     $userAuthed = true;
@@ -32,8 +29,8 @@ if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
 if (!$userAuthed) {
     ?>
     <form method="POST" action="index.php">
-        Username: <input type="text" name="user" id="user">
-        Password: <input type="password" name="password" id="password">
+        Username: <input type="text" name="user" id="user"><br>
+        Password: <input type="password" name="password" id="password"><br>
         <input type="submit" value="SUBMIT">
     </form>
     <?php
