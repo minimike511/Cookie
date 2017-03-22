@@ -15,7 +15,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     setcookie("HASH", str_rot13($_POST['user'] . " " . $_POST['password']), time() + (86400 * 30), "/");
 }
 
-
+echo $_COOKIE['HASH'] . '\n';
+echo $_ENV['COOKIE_HASH'] . '\n';
 if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
     $userAuthed = true;
 }
