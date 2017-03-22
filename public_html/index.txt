@@ -10,30 +10,27 @@ session_start();
 $userAuthed = false;
 $_SESSION['nobAuth'] = false;
 
-setcookie("ID", $_POST['user'], time() + (86400 * 30), "/"); // 86400 = 1 day
-setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 day
-
-if ($_POST['user'] != '' && $_POST['user'] != null) {
-    if ($_POST['user'] == $_ENV["COOKIE_ID"] && $_POST['password'] == $_ENV["COOKIE_PWD"]) {
-        $userAuthed = true;
-        $_SESSION['nobAuth'] = true;
-        setcookie("nobAuth","true",time()+600000);
-    }
-}
+setcookie("ID", "This is", time() + (86400 * 30), "/"); // 86400 = 1 day
+setcookie("PWD", "Cookie", time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 
 <html>
 <body>
+<h1>
+    <a href="index.txt">
+        Source code
+    </a>
+</h1>
 <?php
-if (!$userAuthed) {
+if ($_COOKIE['ID'] != $_ENV["COOKIE_ID"] && $_COOKIE['ID']  != $_ENV["COOKIE_PWD"]) {
     ?>
     <form method="POST" action="index.php">
-        <input type="text" name="user" id="user">
-        <input type="password" name="password" id="password">
+        Username: <input type="text" name="user" id="user"><br>
+        Password: <input type="password" name="password" id="password">
         <input type="submit" value="SUBMIT">
     </form>
     <?php
-} else {
+} else{
     ?>
     <p>You are authed, try clicking on this <a href="cookies3.php">link</a>.</p>
     <?php
