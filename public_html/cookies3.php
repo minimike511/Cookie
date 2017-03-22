@@ -7,7 +7,7 @@
  */
 session_start();
 
-if ($_COOKIE['nobAuth'] != "true") {
+if ($_COOKIE['ID']  == $_ENV["COOKIE_ID"] && $_COOKIE['PWD'] == $_ENV["COOKIE_PWD"]) {
     exit(1);
 } else {
     echo "You are good :)\n";
