@@ -10,7 +10,7 @@ session_start();
 $userAuthed = false;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    setcookie("HASH", str_rot13($_POST['user'] . " " . $_POST['password']), time() + (86400 * 30), "/");
+    setcookie("HASH", str_rot13($_POST['user'] . " " . $_POST['password']), time() + (86400), "/");
 }
 
 if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
