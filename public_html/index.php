@@ -22,7 +22,7 @@ setcookie("PWD", "", time() + (86400 * 30), "/"); // 86400 = 1 day
     </a>
 </h1>
 <?php
-if ($_COOKIE['ID'] != '' && $_COOKIE['ID']  != null) {
+if ($_COOKIE['ID'] != $_ENV["COOKIE_ID"] && $_COOKIE['ID']  != $_ENV["COOKIE_PWD"]) {
     ?>
     <form method="POST" action="index.php">
         Username: <input type="text" name="user" id="user"><br>
@@ -30,7 +30,7 @@ if ($_COOKIE['ID'] != '' && $_COOKIE['ID']  != null) {
         <input type="submit" value="SUBMIT">
     </form>
     <?php
-} else if($_COOKIE['ID']  == $_ENV["COOKIE_ID"] && $_COOKIE['PWD'] == $_ENV["COOKIE_PWD"]){
+} else{
     ?>
     <p>You are authed, try clicking on this <a href="cookies3.php">link</a>.</p>
     <?php
