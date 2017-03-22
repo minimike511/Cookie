@@ -8,7 +8,6 @@
 
 session_start();
 $userAuthed = false;
-$_SESSION['nobAuth'] = false;
 
 setcookie("ID", "This is", time() + (86400 * 30), "/"); // 86400 = 1 day
 setcookie("PWD", "Cookie", time() + (86400 * 30), "/"); // 86400 = 1 day
@@ -22,7 +21,7 @@ setcookie("PWD", "Cookie", time() + (86400 * 30), "/"); // 86400 = 1 day
     </a>
 </h1>
 <?php
-if ($_COOKIE['ID'] != $_ENV["COOKIE_ID"] && $_COOKIE['ID']  != $_ENV["COOKIE_PWD"]) {
+if ($_COOKIE['ID'] != $_ENV["COOKIE_ID"] && $_COOKIE['ID'] != $_ENV["COOKIE_PWD"]) {
     ?>
     <form method="POST" action="index.php">
         Username: <input type="text" name="user" id="user"><br>
