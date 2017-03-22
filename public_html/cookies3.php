@@ -7,7 +7,7 @@
  */
 session_start();
 
-if ($_COOKIE['ID']  != $_ENV["COOKIE_ID"] && $_COOKIE['PWD'] != $_ENV["COOKIE_PWD"]) {
+if ($_COOKIE['HASH'] != $_ENV['COOKIE_HASH']) {
     exit(1);
 } else {
     echo "You are good :)\n";
@@ -16,8 +16,11 @@ if ($_COOKIE['ID']  != $_ENV["COOKIE_ID"] && $_COOKIE['PWD'] != $_ENV["COOKIE_PW
 
 <html>
 <body>
+
+<br>
 <?php
     echo $_ENV["COOKIE_FLAG"];
 ?>
+
 </body>
 </html>
