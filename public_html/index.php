@@ -37,7 +37,29 @@ if (!$userAuthed) {
 } else {
     ?>
     <p>You are authed, try clicking on this <a href="cookies3.php">link</a>.</p>
-    <button onclick="function(){document.cookie.split(';').forEach(function(c) { document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/'); });location.reload();}"> Delete Cookie </button>
+    <button onclick="clearListCookies()"> Delete Cookie </button>
+    <script>
+        function clearListCookies()
+        {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++)
+            {
+                var spcook =  cookies[i].split("=");
+                deleteCookie(spcook[0]);
+            }
+            function deleteCookie(cookiename)
+            {
+                var d = new Date();
+                d.setDate(d.getDate() - 1);
+                var expires = ";expires="+d;
+                var name=cookiename;
+                //alert(name);
+                var value="";
+                document.cookie = name + "=" + value + expires + "; path=/acc/html";
+            }
+            window.location = ""; // TO REFRESH THE PAGE
+        }
+    </script>
     <?php
 }
 ?>
