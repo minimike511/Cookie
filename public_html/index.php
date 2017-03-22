@@ -8,18 +8,24 @@
 
 session_start();
 $userAuthed = false;
-$_SESSION['nobAuth'] = false;
 
-setcookie("ID", $_POST['user'], time() + (86400 * 30), "/"); // 86400 = 1 day
-setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 day
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    setcookie("ID", $_POST['user'], time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie("HASH", str_rot13($_POST['user'] . " " . $_POST['password']), time() + (86400 * 30), "/");
+}
 
+
+if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
+    $userAuthed = true;
+}
+/*
 if ($_POST['user'] != '' && $_POST['user'] != null) {
     if ($_POST['user'] == $_ENV["COOKIE_ID"] && $_POST['password'] == $_ENV["COOKIE_PWD"]) {
         $userAuthed = true;
-        $_SESSION['nobAuth'] = true;
         setcookie("nobAuth","true",time()+600000);
     }
-}
+}*/
 ?>
 
 <html>
