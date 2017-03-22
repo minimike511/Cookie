@@ -40,6 +40,7 @@ if (!$userAuthed) {
 } else {
     ?>
     <p>You are authed, try clicking on this <a href="cookies3.php">link</a>.</p>
+    <button onclick="function(){document.cookie.split(';').forEach(function(c) { document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/'); });location.reload();}"> Delete Cookie </button>
     <?php
 }
 ?>
