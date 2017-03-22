@@ -32,8 +32,8 @@ if ($_COOKIE['HASH'] == $_ENV['COOKIE_HASH']) {
 if (!$userAuthed) {
     ?>
     <form method="POST" action="index.php">
-        <input type="text" name="user" id="user">
-        <input type="password" name="password" id="password">
+        Username: <input type="text" name="user" id="user">
+        Password: <input type="password" name="password" id="password">
         <input type="submit" value="SUBMIT">
     </form>
     <?php
