@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^ctf.westerncyber.club/
+    RewriteRule ^(.*)$ http://westerncyber.club/ctf.php [L,NC,QSA]
 
     # match any URL with www and rewrite it to https without the www
     RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]

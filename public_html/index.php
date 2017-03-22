@@ -25,8 +25,8 @@ setcookie("PWD", $_POST['password'], time() + (86400 * 30), "/"); // 86400 = 1 d
 if (!($_COOKIE['ID'] != '' && $_COOKIE['ID']  != null)) {
     ?>
     <form method="POST" action="index.php">
-        <input type="text" name="user" id="user">
-        <input type="password" name="password" id="password">
+        Username: <input type="text" name="user" id="user"><br>
+        Password: <input type="password" name="password" id="password">
         <input type="submit" value="SUBMIT">
     </form>
     <?php
